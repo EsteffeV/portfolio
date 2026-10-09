@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatigue d'alarme en réanimation — Esteffe Violet</title>
+<meta name="description" content="Analyse ergonomique d'une station de surveillance de soins intensifs : évaluation heuristique de 38 critères, mesure de la saillance visuelle sur quatre conditions de charge, prototype re-mesuré avec le même protocole.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand">
+      <span class="brand-name">Esteffe VIOLET</span>
+      <span class="brand-role">Consultant Facteurs Humains</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">&#9776;</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="../a-propos.html">À propos</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="eyebrow">Projet 01 — Ergonomie cognitive &amp; saillance visuelle</span>
+    <h1>Fatigue d'alarme en réanimation</h1>
+    <p class="lead">L'alarme la plus critique reste-t-elle visible quand le nombre d'alarmes affichées augmente ? Mesure sur une station de surveillance de soins intensifs, puis correction et nouvelle mesure.</p>
+    <div class="case-meta">
+      <div><strong>Secteur</strong>Santé — soins intensifs</div>
+      <div><strong>Pilier</strong>Ergonomie cognitive &amp; saillance visuelle</div>
+      <div><strong>Méthodes</strong>Évaluation heuristique 38 critères + modèle de saillance</div>
+      <div><strong>Sortie</strong>Rapport 19 p., prototype, validation avant / après</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="callout" style="margin-bottom:2.4rem;">
+      <strong>Résultat principal :</strong> la priorité des alarmes est codée par la couleur seule. Lorsque l'écran passe d'une à cinq alarmes, la visibilité de l'alarme critique baisse de <strong>45 %</strong> — alors que cette alarme est strictement inchangée. Trois correctifs prototypés ramènent la baisse à 30 %.
+    </div>
+
+    <div class="case-section">
+      <h2>Ce que mesure l'étude</h2>
+      <div class="note note--quiet">
+        <span class="eyebrow">Portée</span>
+        <p>Le regard est prédit par un modèle appliqué à des images fixes. Aucun oculomètre n'a été utilisé et aucun soignant n'a été observé. Les résultats décrivent une propriété de l'affichage, pas la performance d'un opérateur. L'étude ne traite ni la composante sonore des alarmes, ni le réglage des seuils de déclenchement.</p>
+        <p>L'interface analysée est un produit commercialisé. Le constructeur n'est pas nommé, et les captures ont été retouchées pour retirer les marques. L'étude est indépendante : ni commanditée, ni validée par le constructeur.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2>Contexte</h2>
+      <p>Un patient de soins intensifs est relié à plusieurs équipements : moniteur multiparamétrique, respirateur, pompes à perfusion, dispositifs d'épuration. Chacun dispose de son propre système d'alarme. Le personnel traite donc chaque jour un volume important de signaux, dont la plupart n'appellent aucune action.</p>
+      <p>Entre <strong>80 % et 99 %</strong> des alarmes déclenchées à l'hôpital sont fausses ou cliniquement non pertinentes. L'exposition répétée réduit la réactivité aux alarmes qui, elles, le sont : c'est la <strong>fatigue d'alarme</strong>, classée au premier rang des risques technologiques médicaux par l'ECRI Institute et objectif national de sécurité des patients de la Joint Commission depuis 2014.</p>
+      <p>La littérature caractérise ce problème par le <strong>volume</strong> d'alarmes. Une analyse conduite au Johns Hopkins Hospital a recensé plus de 59 000 conditions d'alarme sur 12 jours, soit environ 350 alarmes par patient et par jour. Cette étude porte sur une propriété distincte : la capacité de l'affichage à maintenir un signal critique visible quand plusieurs signaux coexistent. Réduire le volume agit sur l'exposition ; améliorer la hiérarchisation visuelle agit sur la détectabilité à volume constant.</p>
+    </div>
+
+    <div class="case-section">
+      <h2>Objet analysé</h2>
+      <p>Une station de surveillance centralisée agrège en temps réel les données de plusieurs moniteurs de chevet sur un écran unique, organisé en huit secteurs, un par patient. C'est le point du système où la quantité d'information affichée simultanément est la plus élevée.</p>
+      <p>Quatre conditions de charge ont été construites sur un même effectif de patients, à disposition et valeurs vitales constantes. <strong>L'alarme critique est identique et située au même emplacement dans les conditions 2 à 4</strong> : seul le nombre de signaux concurrents varie.</p>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Condition</th><th>Alarmes affichées</th><th>Contenu de l'écran</th><th>Rôle</th></tr></thead>
+          <tbody>
+            <tr><td>C1 — Baseline</td><td class="num">0</td><td>Huit secteurs, aucun signal actif</td><td>Contrôle</td></tr>
+            <tr><td>C2 — Isolée</td><td class="num">1</td><td>Une bannière rouge de priorité haute</td><td>Maximum attendu</td></tr>
+            <tr><td>C3 — Mixte</td><td class="num">4</td><td>Bannière rouge + 2 alertes techniques + 1 alerte système</td><td>Charge intermédiaire</td></tr>
+            <tr><td>C4 — Extrême</td><td class="num">5</td><td>Bannière rouge + 2 jaunes + 2 cyan simultanées</td><td>Charge maximale</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2>Méthode</h2>
+      <div class="grid-2">
+        <div class="card">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+          </span>
+          <h4>1. Évaluation heuristique</h4>
+          <p class="teaser">38 critères cotés un par un sur les quatre conditions : 18 critères ergonomiques de <strong>Bastien &amp; Scapin</strong>, 10 heuristiques de <strong>Nielsen</strong>, 3 exigences issues des normes de codage des alarmes médicales et de charge d'alarme, 7 critères propres à l'étude, identifiés comme tels. Cotation conforme / partiel / non conforme / non évaluable.</p>
+        </div>
+        <div class="card">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/></svg>
+          </span>
+          <h4>2. Analyse du regard</h4>
+          <p class="teaser">Un modèle de saillance produit, à partir de l'image seule, une carte où chaque point reçoit une valeur d'autant plus élevée que la zone est susceptible d'attirer le regard. Il combine ce qui se détache par la <strong>structure</strong> — un bord net, une forme isolée — et ce qui se détache par la <strong>couleur</strong>. Sans apprentissage ni tirage aléatoire : à image identique, mêmes valeurs.</p>
+        </div>
+      </div>
+      <div class="note note--quiet">
+        <span class="eyebrow">Définition</span>
+        <p><strong>Saillance visuelle</strong> : capacité d'une zone de l'image à attirer le regard indépendamment de la tâche en cours. Elle dépend des seules propriétés physiques de l'image — contraste, couleur, orientation — non du sens de ce qui est affiché. Le modèle ne représente donc pas la stratégie de balayage d'un soignant entraîné.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2>Où se porte le regard</h2>
+      <p>Les quatre cartes produites par le modèle, superposées à l'image d'origine. L'attention prédite croît du bleu au rouge.</p>
+      <figure class="figure fig fig--wide">
+        <div class="fig-grid">
+          <figure>
+            <img src="../assets/img/saillance-c1.jpg" alt="Carte du regard en condition 1 : l'attention prédite se répartit sur les grandes valeurs numériques des huit secteurs, sans foyer dominant.">
+            <figcaption><b>C1 — 0 alarme</b>Le regard se répartit sur les grandes valeurs numériques des secteurs actifs.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/img/saillance-c2.jpg" alt="Carte du regard en condition 2 : un foyer rouge unique et net sur la bannière d'alarme critique, au-dessus d'un fond homogène.">
+            <figcaption><b>C2 — 1 alarme</b>Un foyer unique et net sur la bannière critique, isolé dans un fond homogène.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/img/saillance-c3.jpg" alt="Carte du regard en condition 3 : le foyer le plus chaud s'est déplacé vers l'alerte système en tête d'écran et les alertes techniques.">
+            <figcaption><b>C3 — 4 alarmes</b>Le foyer le plus chaud se déplace vers l'alerte système et les alertes techniques.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/img/saillance-c4.jpg" alt="Carte du regard en condition 4 : quatre foyers d'intensité voisine répartis sur l'écran, la bannière critique n'étant plus dominante.">
+            <figcaption><b>C4 — 5 alarmes</b>Quatre foyers d'intensité voisine. La bannière critique n'est plus prioritaire.</figcaption>
+          </figure>
+        </div>
+        <figcaption>
+          <b>Figure 1 — Cartes du regard, quatre conditions</b>
+          Chaque carte est normalisée sur sa propre étendue : seules les positions relatives à l'intérieur d'une même carte sont interprétables. La progression se lit directement — en C2 la bannière critique est le seul point chaud, en C3 elle s'atténue pendant que l'alerte système prend le dessus, en C4 quatre foyers d'intensité comparable coexistent.
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="case-section">
+      <h2>Mise en chiffres</h2>
+      <div class="note note--quiet">
+        <span class="eyebrow">Mesure retenue</span>
+        <p><strong>Ratio de visibilité</strong> = attention moyenne sur la zone d'alarme ÷ attention moyenne sur l'écran entier. Ce rapport est sans unité : ×1 signifie que la zone capte autant l'attention que la moyenne de l'écran, ×8,72 qu'elle en capte 8,72 fois plus. La zone est délimitée automatiquement par sa couleur, à l'intérieur du secteur concerné.</p>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat"><span class="value">×8,72</span><span class="label">ratio de visibilité, 1 alarme affichée</span></div>
+        <div class="stat"><span class="value">×4,82</span><span class="label">ratio de visibilité, 5 alarmes affichées</span></div>
+        <div class="stat"><span class="value">−44,7 %</span><span class="label">baisse entre les deux, signal inchangé</span></div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Condition</th><th>Alarmes affichées</th><th>Ratio de visibilité (sans unité)</th><th>Lecture</th></tr></thead>
+          <tbody>
+            <tr><td>C1 — Baseline</td><td class="num">0</td><td class="num">×1,35 *</td><td>Aucune bannière affichée : voir la note</td></tr>
+            <tr><td>C2 — Isolée</td><td class="num">1</td><td class="num">×8,72</td><td>Maximum observé</td></tr>
+            <tr><td>C3 — Mixte</td><td class="num">4</td><td class="num">×5,27</td><td>Baisse de 40 % par rapport à C2</td></tr>
+            <tr><td>C4 — Extrême</td><td class="num">5</td><td class="num">×4,82</td><td>Baisse de 44,7 % par rapport à C2</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted" style="font-size:0.88rem;">* En condition 1, aucune bannière n'est affichée : la détection par la couleur retient les pixels rouges résiduels du secteur, c'est-à-dire le texte rose des valeurs de pouls et de pression. Cette valeur ne mesure pas la visibilité d'une alarme et n'est comparable à aucune autre ligne. Elle est exclue de tous les calculs.</p>
+    </div>
+
+    <div class="case-section">
+      <h2>Conformité de la conception</h2>
+      <p>21 critères sur 34 évaluables sont conformes, soit <strong>62 %</strong>. Les écarts portent sur la redondance du codage, la densité d'information et la priorisation sous alarmes multiples.</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Référentiel</th><th>Conf.</th><th>Partiel</th><th>Non conf.</th><th>Non éval.</th><th>Taux</th></tr></thead>
+          <tbody>
+            <tr><td>Bastien &amp; Scapin</td><td class="num">11</td><td class="num">4</td><td class="num">1</td><td class="num">2</td><td class="num">69 %</td></tr>
+            <tr><td>Nielsen</td><td class="num">5</td><td class="num">2</td><td class="num">1</td><td class="num">2</td><td class="num">62 %</td></tr>
+            <tr><td>Codage des alarmes médicales</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">50 %</td></tr>
+            <tr><td>Charge d'alarme (transposé)</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0 %</td></tr>
+            <tr><td>Analyse complémentaire</td><td class="num">4</td><td class="num">0</td><td class="num">3</td><td class="num">0</td><td class="num">57 %</td></tr>
+            <tr><td>Total (38 critères)</td><td class="num">21</td><td class="num">6</td><td class="num">7</td><td class="num">4</td><td class="num">62 %</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Premier écart — la priorité est codée par la couleur seule.</strong> Aucune différence de forme, de pictogramme, de position ou de taille n'a été relevée entre les niveaux. Les normes de codage des alarmes médicales demandent une redondance : un codage par la couleur seule est inopérant en cas de déficience de la vision des couleurs, et fragile dès que plusieurs couleurs vives coexistent.
+      </div>
+
+      <div class="disclaimer">
+        <strong>Second écart — les bannières ont toutes le même format.</strong> En condition 4, cinq bannières de taille et de position identiques coexistent : le même motif est répété cinq fois avec trois teintes.
+      </div>
+
+      <h3>Points conformes</h3>
+      <p>Trois des vingt et un critères satisfaits concernent directement la sécurité du traitement des alarmes. Les alarmes de priorité haute sont à acquittement obligatoire : la bannière persiste tant qu'un opérateur n'a pas agi, même si la condition physiologique a cessé, avec rappel sonore toutes les trois minutes. La couleur cyan est réservée aux alertes techniques, ce qui permet d'écarter une catégorie entière de signaux sans en lire le libellé. L'historique est conservé sept jours.</p>
+      <p>Ces trois éléments protègent la persistance du signal dans le temps. Ils ne concernent pas sa visibilité à un instant donné, qui est la variable mesurée ici.</p>
+    </div>
+
+    <div class="case-section">
+      <h2>Interprétation</h2>
+      <p>Trois mécanismes attentionnels rendent compte des résultats. Aucun n'est démontré par cette étude : ce sont les explications les plus économiques au regard de modèles établis.</p>
+      <p><strong>Recherche visuelle.</strong> Une cible qui se distingue par une seule caractéristique élémentaire — ici la couleur — est détectée immédiatement, quel que soit le nombre d'éléments présents. Si elle ne se distingue que par une combinaison de caractéristiques, un balayage devient nécessaire et sa durée augmente avec le nombre d'éléments. En C2, la bannière rouge est la seule couleur vive. En C4, trois couleurs vives coexistent sur cinq bannières de géométrie identique : la couleur ne suffit plus à isoler la cible.</p>
+      <p><strong>Charge d'information.</strong> L'écran est déjà dense avant toute alarme : huit secteurs, six à dix valeurs numériques chacun, deux tracés. La carte de la condition 1 le montre — en l'absence de tout signal d'alerte, les grandes valeurs numériques captent déjà l'essentiel du regard prédit. Une bannière ajoutée entre en concurrence avec des éléments déjà présents.</p>
+      <p>L'écart normatif relevé par la grille et la baisse mesurée par le modèle décrivent le même fait, par deux chemins indépendants.</p>
+    </div>
+
+    <div class="case-section">
+      <h2>Recommandations</h2>
+      <p>Cinq recommandations, chacune rattachée au critère qui la motive. Trois ont été prototypées.</p>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Recommandation</th><th>Contenu</th><th>Critère source</th><th>Risque</th><th>Effort</th></tr></thead>
+          <tbody>
+            <tr><td>R1 — Redondance de codage</td><td>Associer à chaque niveau une combinaison stable de forme, de pictogramme et de position, en complément de la couleur</td><td>Codage des alarmes, crit. 2</td><td>Élevé</td><td>Moyen</td></tr>
+            <tr><td>R2 — Formats différenciés</td><td>Faire varier hauteur, épaisseur de bordure et emprise de la bannière selon le niveau, plutôt que recolorer un format unique</td><td>Analyse compl., crit. 4</td><td>Élevé</td><td>Faible</td></tr>
+            <tr><td>R3 — Priorisation dynamique</td><td>Afficher un décompte par niveau en tête d'écran et atténuer les secteurs sans alarme au-delà d'une alarme active</td><td>Analyse compl., crit. 1 et 5</td><td>Élevé</td><td>Élevé</td></tr>
+            <tr><td>R4 — Densité réduite</td><td>Atténuer les informations secondaires des secteurs non alarmés pendant qu'une alarme critique est active</td><td>B&amp;S crit. 8, Nielsen crit. 8</td><td>Moyen</td><td>Élevé</td></tr>
+            <tr><td>R5 — Texte agrandi</td><td>Augmenter la taille du texte des bannières, dont l'écart avec les valeurs vitales voisines est important</td><td>B&amp;S crit. 5</td><td>Faible</td><td>Faible</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>R4 n'a pas été prototypée.</strong> Atténuer les secteurs sans alarme réduit la visibilité d'informations qui restent pertinentes, sur des secteurs susceptibles de passer eux-mêmes en alarme. Cette recommandation introduit donc un risque propre, qui demande une validation clinique spécifique, hors du périmètre de l'étude.</p>
+
+      <h3>Principe de conception du prototype</h3>
+      <p>Le prototype ne modifie que les points identifiés comme non conformes. L'état sans alarme conserve la structure, la disposition et la densité d'origine ; les corrections s'activent selon le nombre et le niveau des alarmes actives. Outre l'intérêt pratique, ce choix limite le nombre de variables modifiées entre les deux jeux d'images, ce qui rend la comparaison interprétable.</p>
+    </div>
+
+    <div class="case-section">
+      <h2>Avant / après</h2>
+      <figure class="figure fig fig--wide">
+        <div class="fig-pair">
+          <img src="../assets/img/cond-4-extreme.jpg" alt="Interface d'origine en condition de charge maximale : cinq bannières de format identique distinguées par la seule teinte.">
+          <img src="../assets/img/redesign-c4.jpg" alt="Prototype en condition de charge maximale : trois formats de bannière distincts selon la priorité, pictogramme triangulaire sur l'alarme critique, décompte par niveau en tête d'écran, secteurs sans alarme atténués.">
+        </div>
+        <figcaption>
+          <b>Figure 2 — Condition 4, avant et après</b>
+          Mêmes patients, mêmes alarmes, mêmes positions. Seuls le codage des priorités et la gestion de l'affichage diffèrent. Les marqueurs distinguant les niveaux passent de un — la couleur — à quatre ou plus : teinte, fond, pictogramme, capitalisation, largeur de bannière, bordure de secteur, comptage en tête d'écran. Le prototype porte un nom fictif ; il ne constitue ni une proposition commerciale, ni une représentation d'un produit existant, ni une préconisation validée cliniquement.
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="case-section">
+      <h2>Validation comparative</h2>
+      <p>Le même protocole a été appliqué aux quatre conditions redessinées : même modèle, mêmes paramètres, même définition de la zone d'intérêt.</p>
+      <div class="bars">
+        <div class="bar-row">
+          <span class="bar-label">Interface d'origine</span>
+          <div class="bar-track"><div class="bar-fill bar-fill--muted" style="width:89%"><span>−44,7 %</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Prototype</span>
+          <div class="bar-track"><div class="bar-fill" style="width:59%"><span>−29,7 %</span></div></div>
+        </div>
+      </div>
+      <p class="text-muted" style="font-size:0.88rem;">Baisse du ratio de visibilité de l'alarme critique entre une alarme affichée (C2) et cinq (C4). La variation est mesurée à l'intérieur de chaque interface, ce qui neutralise l'écart de chaîne de rendu entre les deux jeux d'images.</p>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Condition</th><th>Alarmes</th><th>Avant (sans unité)</th><th>Après (sans unité)</th><th>Écart</th></tr></thead>
+          <tbody>
+            <tr><td>C2 — Isolée</td><td class="num">1</td><td class="num">×8,72</td><td class="num">×16,56</td><td class="num">×1,9</td></tr>
+            <tr><td>C3 — Mixte</td><td class="num">4</td><td class="num">×5,27</td><td class="num">×16,06</td><td class="num">×3,0</td></tr>
+            <tr><td>C4 — Extrême</td><td class="num">5</td><td class="num">×4,82</td><td class="num">×11,64</td><td class="num">×2,4</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted" style="font-size:0.88rem;">La condition 1 n'apparaît pas : sans bannière affichée, elle ne mesure pas la visibilité d'une alarme. Le détail figure dans le rapport.</p>
+
+      <p>La baisse n'est pas supprimée : elle reste attendue dès que plusieurs éléments colorés coexistent. Elle est réduite d'un tiers environ. En valeur absolue, la bannière critique du prototype reste en condition 4 <strong>la zone la plus regardée de l'écran</strong>, alors que sur l'interface d'origine des bannières de priorité inférieure atteignaient une visibilité voisine.</p>
+    </div>
+
+    <div class="case-section">
+      <h2>Limites</h2>
+      <p>Le regard est prédit, non mesuré : aucune donnée de fixation oculaire n'a été recueillie. Une baisse de saillance prédite n'établit pas un allongement du temps de détection chez un opérateur réel — elle établit que la propriété d'affichage sur laquelle repose la détection se dégrade. Le lien avec la performance humaine relève de la littérature citée, pas d'une mesure produite ici.</p>
+      <p>Le modèle a par ailleurs été développé pour cette étude. Il n'a pas été confronté à un modèle indépendant : un biais d'implémentation ne peut être exclu. La levée de ces deux limites passerait par une validation en oculométrie sur soignants, appliquée aux mêmes conditions.</p>
+    </div>
+
+    <div class="callout"><strong>Valeur démontrée :</strong> diagnostiquer, avec des méthodes reconnues et une mesure reproductible, un risque de sécurité patient d'origine ergonomique — puis le traduire en recommandations priorisées, prototypées, et re-mesurées avec le même protocole.</div>
+
+    <p class="center" style="margin-top:2.4rem;">
+      <a href="../documents/analyse-ergonomique-interface-medicale.pdf" class="btn btn-primary">Rapport complet · PDF · 19 pages</a>
+    </p>
+    <p class="center text-muted" style="font-size:0.88rem; margin-top:0.6rem;">Méthode détaillée, grille des 38 critères ligne par ligne, modèle de saillance et références.</p>
+
+    <p class="center" style="margin-top:1.4rem;">
+      <a href="../portfolio.html" class="btn btn-ghost">← Retour au portfolio</a>
+      <a href="projet-2-classification-physio.html" class="btn btn-dark">Projet suivant →</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <div class="foot-brand">Esteffe Violet</div>
+      <div class="foot-role">Consultant Facteurs Humains — Ergonomie, Data &amp; UX</div>
+    </div>
+    <div class="foot-links">
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../a-propos.html">À propos</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../mentions-legales.html">Mentions légales</a>
+      <a href="https://www.linkedin.com/in/esteffe" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="copyright">© 2026 Esteffe Violet.</div>
+  </div>
+</footer>
+
+<script src="../assets/script.js"></script>
+</body>
+</html>

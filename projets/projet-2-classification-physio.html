@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classification d'états affectifs par signaux physiologiques — Esteffe Violet</title>
+<meta name="description" content="Traitement du signal, feature engineering et classification stress / neutre / amusement à partir de mesures physiologiques portables — dataset WESAD.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand">
+      <span class="brand-name">Esteffe VIOLET</span>
+      <span class="brand-role">Consultant Facteurs Humains</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">&#9776;</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="../a-propos.html">À propos</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="eyebrow">Projet 02 — Sciences affectives &amp; modélisation computationnelle</span>
+    <h1>Classification d'états affectifs par signaux physiologiques</h1>
+    <p class="lead">Ce que des capteurs portables permettent réellement de discriminer, et à quel coût en fiabilité.</p>
+    <div class="case-meta">
+      <div><strong>Secteur</strong>Sciences affectives</div>
+      <div><strong>Pilier</strong>Modélisation computationnelle sur signal physiologique</div>
+      <div><strong>Données</strong>WESAD — 15 sujets, capteurs poitrine et poignet</div>
+      <div><strong>Statut</strong>Travail en cours</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="disclaimer">
+      <strong>Étude en cours.</strong> Le cadrage, les données mobilisées et la méthode sont arrêtés et décrits ci-dessous. Les résultats, figures et recommandations seront publiés à l'issue du traitement — cette page ne présente aucun chiffre tant qu'il n'a pas été mesuré.
+    </div>
+
+    <div class="case-section">
+      <h2>Contexte &amp; problématique</h2>
+      <p>Les capteurs portables — montres, bracelets, textiles instrumentés — produisent en continu des signaux du système nerveux autonome. La promesse commerciale associée est la détection d'états affectifs. La question scientifique est plus étroite et plus utile : <strong>que peut-on réellement discriminer à partir de ces signaux seuls, et à quel coût en fiabilité ?</strong></p>
+      <p>Cette étude constitue la brique technique de fond du volet sciences affectives : traitement du signal et classification, sans narratif d'application. Elle sert de socle méthodologique aux travaux appliqués qui la suivent.</p>
+    </div>
+
+    <div class="case-section">
+      <h2>Données mobilisées</h2>
+      <p>Le jeu de données <strong>WESAD</strong> (Wearable Stress and Affect Detection) porte sur 15 sujets équipés simultanément de deux dispositifs.</p>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead><tr><th>Dispositif</th><th>Emplacement</th><th>Signaux enregistrés</th></tr></thead>
+          <tbody>
+            <tr><td>RespiBAN</td><td>Poitrine</td><td>ECG, activité électrodermale, électromyographie, respiration, température, accélérométrie</td></tr>
+            <tr><td>Empatica E4</td><td>Poignet</td><td>Photopléthysmographie (BVP), activité électrodermale, température, accélérométrie</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Trois états affectifs sont annotés dans le protocole d'origine : <strong>neutre</strong>, <strong>stress</strong> et <strong>amusement</strong> — directement exploitables pour une classification stress / non-stress comme pour une classification à trois classes.</p>
+    </div>
+
+    <div class="case-section">
+      <h2>Méthode</h2>
+      <div class="grid-2">
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l2-6 3 12 3-9 2 4h7"/></svg></span>
+          <h4>Traitement du signal</h4>
+          <p class="teaser">Filtrage, détection des complexes QRS et des pics systoliques, séparation des composantes tonique et phasique de l'activité électrodermale, rejet des segments artefactés.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+          <h4>Feature engineering</h4>
+          <p class="teaser">Indices de variabilité de fréquence cardiaque dans les domaines temporel et fréquentiel, fréquence et amplitude des réponses électrodermales, statistiques de respiration et de mouvement, par fenêtres glissantes.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5l3 8M16 7.5l-3 8"/></svg></span>
+          <h4>Classification</h4>
+          <p class="teaser">Comparaison de plusieurs familles de classifieurs, validation croisée <em>leave-one-subject-out</em> pour mesurer la généralisation à un sujet non vu — le seul protocole qui ait un sens hors laboratoire.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></span>
+          <h4>Analyse de la variabilité interindividuelle</h4>
+          <p class="teaser">Quantification de l'écart de performance entre sujets et de l'effet d'une normalisation par ligne de base individuelle — la principale source de fragilité de ce type de modèle.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2>Ce que l'étude ne cherchera pas à démontrer</h2>
+      <div class="note note--quiet">
+        <span class="eyebrow">Limite posée d'emblée</span>
+        <p>Les signaux du système nerveux autonome reflètent principalement l'intensité de l'activation, pas la valence. Un modèle entraîné sur WESAD peut discriminer des états d'activation différente ; il ne mesure pas une émotion au sens où l'entend le langage courant. Ce point est développé dans le guide <a href="../portfolio.html#publications">Mesurer l'émotion</a>.</p>
+      </div>
+    </div>
+
+
+    <div class="case-section">
+      <h2>Résultats</h2>
+      <div class="note note--quiet">
+        <span class="eyebrow">Section en cours de rédaction</span>
+        <p>Les résultats seront publiés ici une fois le traitement terminé : indicateurs de performance, figures et interprétation, accompagnés des limites de la mesure.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2>Recommandations</h2>
+      <div class="note note--quiet">
+        <span class="eyebrow">Section en cours de rédaction</span>
+        <p>Les recommandations découleront des résultats mesurés et seront priorisées selon la même grille que l'étude 01 : réduction du risque estimée d'un côté, effort d'implémentation de l'autre.</p>
+      </div>
+    </div>
+
+    <div class="callout"><strong>Valeur visée :</strong> démontrer la maîtrise de la chaîne technique complète, du signal brut à un classifieur évalué dans des conditions de généralisation honnêtes.</div>
+
+    <p class="center" style="margin-top:2.4rem;">
+      <a href="projet-1-fatigue-alarme.html" class="btn btn-ghost">← Projet précédent</a>
+      <a href="projet-3-vigilance-volant.html" class="btn btn-dark">Projet suivant →</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <div class="foot-brand">Esteffe Violet</div>
+      <div class="foot-role">Consultant Facteurs Humains — Ergonomie, Data &amp; UX</div>
+    </div>
+    <div class="foot-links">
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../a-propos.html">À propos</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../mentions-legales.html">Mentions légales</a>
+      <a href="https://www.linkedin.com/in/esteffe" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="copyright">© 2026 Esteffe Violet.</div>
+  </div>
+</footer>
+
+<script src="../assets/script.js"></script>
+</body>
+</html>

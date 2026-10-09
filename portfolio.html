@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Esteffe Violet, Consultant Facteurs Humains</title>
+<meta name="description" content="Études de cas et publications d'Esteffe Violet, consultant Facteurs Humains : audits ergonomiques, modélisation computationnelle et analyse de données comportementales appliqués à des secteurs à forts enjeux.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Esteffe VIOLET</span>
+      <span class="brand-role">Consultant Facteurs Humains</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">&#9776;</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="eyebrow">Portfolio</span>
+    <h1>Études de cas &amp; publications</h1>
+    <p class="lead">Des interventions appliquées à des secteurs à forts enjeux, illustrant plusieurs méthodes sur des systèmes où le comportement humain joue un rôle déterminant.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Projets</span>
+      <h2>Études de cas terrain</h2>
+      <p class="lead">Des interventions détaillées, du diagnostic à la recommandation.</p>
+    </div>
+
+    <div class="results-bar">
+      <span id="resultCount" class="results-count">4 projets</span>
+      <button class="filter-toggle" id="filterToggle" aria-expanded="false" aria-controls="filterPanel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+        Filtres
+      </button>
+    </div>
+
+    <div class="filter-panel" id="filterPanel" hidden>
+      <div class="filter-group">
+        <h5>Secteur</h5>
+        <label class="filter-option"><input type="checkbox" class="filter-check" data-group="secteur" value="sante"> Santé <span class="count">(1)</span></label>
+        <label class="filter-option"><input type="checkbox" class="filter-check" data-group="secteur" value="affectif"> Sciences affectives <span class="count">(2)</span></label>
+        <label class="filter-option"><input type="checkbox" class="filter-check" data-group="secteur" value="transport"> Transport <span class="count">(1)</span></label>
+      </div>
+      <div class="filter-group">
+        <h5>Méthode</h5>
+        <label class="filter-option"><input type="checkbox" class="filter-check" data-group="methode" value="ergonomie"> Ergonomie cognitive <span class="count">(1)</span></label>
+        <label class="filter-option"><input type="checkbox" class="filter-check" data-group="methode" value="modelisation"> Modélisation computationnelle <span class="count">(1)</span></label>
+        <label class="filter-option"><input type="checkbox" class="filter-check" data-group="methode" value="vision"> Vision par ordinateur <span class="count">(1)</span></label>
+        <label class="filter-option"><input type="checkbox" class="filter-check" data-group="methode" value="protocole"> Protocole de mesure <span class="count">(1)</span></label>
+      </div>
+      <button class="filter-reset" id="filterReset">Réinitialiser</button>
+    </div>
+
+    <div class="grid-2">
+
+      <div class="project-card" data-secteur="sante" data-methode="ergonomie">
+        <div class="tag-row">
+          <span class="tag">Santé</span>
+          <span class="tag">Ergonomie cognitive</span>
+        </div>
+        <h3><a href="projets/projet-1-fatigue-alarme.html">Fatigue d'alarme en réanimation</a></h3>
+        <p>Analyse d'une station de surveillance de soins intensifs : l'alarme la plus critique reste-t-elle visible quand le nombre d'alarmes affichées augmente ? Évaluation heuristique de 38 critères croisée avec une mesure de saillance visuelle, sur quatre conditions de charge, puis correction prototypée et re-mesurée.</p>
+        <div class="card-figures">
+          <div><span class="v">−45 %</span><span class="k">visibilité de l'alarme critique</span></div>
+          <div><span class="v">−30 %</span><span class="k">après redesign</span></div>
+          <div><span class="v">62 %</span><span class="k">conformité, 34 critères</span></div>
+        </div>
+        <p class="status-line">Publié · Sept. 2026 · Rapport de 19 p.</p>
+        <a href="projets/projet-1-fatigue-alarme.html" class="cta-link">Lire l'étude de cas →</a>
+      </div>
+
+      <div class="project-card" data-secteur="affectif" data-methode="modelisation">
+        <div class="tag-row">
+          <span class="tag">Sciences affectives</span>
+          <span class="tag">Modélisation computationnelle</span>
+        </div>
+        <h3><a href="projets/projet-2-classification-physio.html">Classification d'états affectifs par signaux physiologiques</a></h3>
+        <p>Traitement du signal, feature engineering et classification d'états stress / neutre / amusement à partir de mesures portables — ECG, BVP, activité électrodermale, respiration, accélérométrie. Brique technique de fond : ce que le signal brut permet de discriminer, et à quel coût en fiabilité.</p>
+        <p class="status-line">En cours · Dataset WESAD</p>
+        <a href="projets/projet-2-classification-physio.html" class="cta-link">Lire l'étude de cas →</a>
+      </div>
+
+      <div class="project-card" data-secteur="transport" data-methode="vision">
+        <div class="tag-row">
+          <span class="tag">Vigilance</span>
+          <span class="tag">Vision par ordinateur</span>
+        </div>
+        <h3><a href="projets/projet-3-vigilance-volant.html">Détection de la baisse de vigilance au volant</a></h3>
+        <p>Mesure de l'ouverture et de la fermeture des yeux (PERCLOS), détection du bâillement, et modélisation des transitions d'état de vigilance — alerte, somnolence, micro-sommeil — par chaîne de Markov. Application aux véhicules à conduite déléguée.</p>
+        <p class="status-line">En cours · Dataset NTHU-DDD</p>
+        <a href="projets/projet-3-vigilance-volant.html" class="cta-link">Lire l'étude de cas →</a>
+      </div>
+
+      <div class="project-card" data-secteur="affectif" data-methode="protocole">
+        <div class="tag-row">
+          <span class="tag">Sciences affectives</span>
+          <span class="tag">Protocole de mesure</span>
+        </div>
+        <h3><a href="projets/projet-4-mesure-publicitaire.html">Protocole de mesure multidimensionnelle en test publicitaire</a></h3>
+        <p>Le déclaratif seul, en test publicitaire, est biaisé par la désirabilité sociale. La mesure implicite et physiologique corrige ce biais. Protocole croisant déclaratif, physiologie et comportement, démontré sur données réelles et accompagné de sa critique méthodologique.</p>
+        <p class="status-line">En cours · Dataset DEAP</p>
+        <a href="projets/projet-4-mesure-publicitaire.html" class="cta-link">Lire l'étude de cas →</a>
+      </div>
+
+    </div>
+
+    <p id="noResults" class="text-muted" hidden>Aucun projet ne correspond à ces filtres.</p>
+  </div>
+</section>
+
+<section class="alt" id="publications">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Publications</span>
+      <h2>Guides &amp; livres blancs</h2>
+      <p class="lead">Une série de publications scientifiques et techniques, destinées à des audiences professionnelles et réglementaires.</p>
+    </div>
+
+    <div class="results-bar">
+      <span id="pubResultCount" class="results-count">2 publications</span>
+      <button class="filter-toggle" id="pubFilterToggle" aria-expanded="false" aria-controls="pubFilterPanel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+        Filtres
+      </button>
+    </div>
+
+    <div class="filter-panel" id="pubFilterPanel" hidden>
+      <div class="filter-group">
+        <h5>Format</h5>
+        <label class="filter-option"><input type="checkbox" class="pub-filter-check" data-group="format" value="guide"> Guide méthodologique <span class="count">(1)</span></label>
+        <label class="filter-option"><input type="checkbox" class="pub-filter-check" data-group="format" value="livre-blanc"> Livre blanc <span class="count">(1)</span></label>
+      </div>
+      <button class="filter-reset" id="pubFilterReset">Réinitialiser</button>
+    </div>
+
+    <div class="grid-2">
+
+      <div class="project-card" data-format="guide">
+        <div class="tag-row"><span class="tag">Guide méthodologique</span></div>
+        <h3>Mesurer l'émotion</h3>
+        <p>Fondements scientifiques de la mesure psychophysiologique des émotions : ce que chaque instrument mesure réellement, ses conditions de validité, et ce que la mesure autorise à conclure.</p>
+        <button class="expand-toggle" aria-expanded="false" aria-controls="pub-emotion">
+          Lire le détail
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="expertise-detail" id="pub-emotion" hidden>
+          <p><strong>Contenu :</strong> l'objet de la mesure (affect, émotion, humeur ; approches dimensionnelle et catégorielle) ; les mesures subjectives et déclaratives standardisées ; les bases physiologiques du système nerveux autonome ; les signaux — activité électrodermale, activité cardiaque, respiration, regard et pupille, cinématique du mouvement ; la mesure en tâche réelle et ses sources de variance ; l'inférence et ses limites ; le cadre normatif européen applicable aux données physiologiques.</p>
+          <p><strong>Thèse méthodologique :</strong> l'émotion est un processus multidimensionnel qu'aucun outil ne peut évaluer seul. Les signaux périphériques reflètent principalement l'intensité de l'activation — deux états physiologiquement proches peuvent traduire des valences opposées. La restriction est structurelle, pas technique.</p>
+          <div class="callout"><strong>Valeur démontrée :</strong> capacité à produire un contenu scientifique de référence, exploitable par des équipes techniques ou réglementaires.</div>
+        </div>
+        <p class="status-line">Publié · Sept. 2026 · 47 pages</p>
+        <a href="documents/mesurer-l-emotion.pdf" class="cta-link">Télécharger le guide (PDF) →</a>
+      </div>
+
+      <div class="project-card" data-format="livre-blanc">
+        <div class="tag-row"><span class="tag">Livre blanc</span></div>
+        <h3>Charge cognitive et émotion : où passe la frontière légale sous l'AI&nbsp;Act</h3>
+        <p>L'article 5(1)(f) de l'AI Act interdit l'inférence d'émotion en milieu professionnel, sauf exception médicale ou de sécurité ; l'article 50(3) impose une obligation de transparence envers les personnes soumises à un système de reconnaissance d'émotion.</p>
+        <button class="expand-toggle" aria-expanded="false" aria-controls="pub-aiact">
+          Lire le détail
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="expertise-detail" id="pub-aiact" hidden>
+          <p><strong>Question traitée :</strong> où se situe exactement la limite entre un indicateur de charge cognitive et une inférence d'émotion au sens du règlement ? Le livre blanc s'appuie sur deux cas : un classifieur de stress de type WESAD déployé en contexte professionnel ou de bien-être au travail, et un panel de test publicitaire soumis à un système de reconnaissance d'émotion.</p>
+          <p><strong>Références :</strong> articles 5 et 50(3) de l'AI Act.</p>
+        </div>
+        <p class="status-line">En cours de rédaction</p>
+      </div>
+
+    </div>
+
+    <p id="pubNoResults" class="text-muted" hidden>Aucune publication ne correspond à ces filtres.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <div class="foot-brand">Esteffe Violet</div>
+      <div class="foot-role">Consultant Facteurs Humains — Ergonomie, Data &amp; UX</div>
+    </div>
+    <div class="foot-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="https://www.linkedin.com/in/esteffe" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="copyright">© 2026 Esteffe Violet.</div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Détection de la baisse de vigilance au volant — Esteffe Violet</title>
+<meta name="description" content="PERCLOS, détection du bâillement et modélisation markovienne des transitions d'état de vigilance — dataset NTHU-DDD.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand">
+      <span class="brand-name">Esteffe VIOLET</span>
+      <span class="brand-role">Consultant Facteurs Humains</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">&#9776;</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="../a-propos.html">À propos</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="eyebrow">Projet 03 — Vigilance &amp; vision par ordinateur</span>
+    <h1>Détection de la baisse de vigilance au volant</h1>
+    <p class="lead">Mesurer la dynamique de la baisse de vigilance plutôt que de produire une alerte binaire.</p>
+    <div class="case-meta">
+      <div><strong>Secteur</strong>Transport — conduite déléguée</div>
+      <div><strong>Pilier</strong>Modélisation computationnelle &amp; vision par ordinateur</div>
+      <div><strong>Données</strong>NTHU-DDD — séquences vidéo annotées en états de vigilance</div>
+      <div><strong>Statut</strong>Travail en cours</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="disclaimer">
+      <strong>Étude en cours.</strong> Le cadrage, les données mobilisées et la méthode sont arrêtés et décrits ci-dessous. Les résultats, figures et recommandations seront publiés à l'issue du traitement — cette page ne présente aucun chiffre tant qu'il n'a pas été mesuré.
+    </div>
+
+    <div class="case-section">
+      <h2>Contexte &amp; problématique</h2>
+      <p>Dans un véhicule à conduite déléguée, le conducteur reste responsable de la reprise en main. Sa capacité à reprendre le contrôle dépend de son état de vigilance au moment de la demande — et cet état se dégrade d'autant plus vite que la tâche de supervision est pauvre en sollicitations.</p>
+      <p>L'objectif est de mesurer cette dégradation à partir du seul signal vidéo du visage, et de modéliser la <strong>dynamique des transitions</strong> plutôt que de produire une détection binaire instantanée : passer d'un « le conducteur est somnolent » à un « le conducteur est dans un état d'où la probabilité de basculer en micro-sommeil dans les N secondes est de p ».</p>
+    </div>
+
+    <div class="case-section">
+      <h2>Données mobilisées</h2>
+      <p>Le jeu de données <strong>NTHU-DDD</strong> (NTHU Driver Drowsiness Detection, NTHU CVLab) fournit des séquences vidéo de conducteurs en simulateur, annotées en états de vigilance, avec des variations de conditions d'éclairage et de port de lunettes.</p>
+    </div>
+
+    <div class="case-section">
+      <h2>Méthode</h2>
+      <div class="grid-2">
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/></svg></span>
+          <h4>Mesure oculaire — PERCLOS</h4>
+          <p class="teaser">Détection des points caractéristiques du visage, calcul du taux de fermeture palpébrale sur fenêtre glissante. PERCLOS est la métrique de référence documentée dans la littérature sur la somnolence au volant.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14c1.2 1.6 6.8 1.6 8 0"/><path d="M9 9v.01M15 9v.01"/></svg></span>
+          <h4>Détection du bâillement</h4>
+          <p class="teaser">Suivi de l'ouverture buccale et de sa durée, en complément du signal oculaire — deux indicateurs indépendants valant mieux qu'un seul sous conditions d'éclairage dégradées.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="12" cy="5" r="2.5"/><path d="M7.2 11l3-4M16.8 11l-3-4M7.5 12.5h9"/></svg></span>
+          <h4>Modélisation markovienne</h4>
+          <p class="teaser">Chaîne de Markov sur trois états — alerte, somnolence, micro-sommeil — pour estimer les probabilités de transition et le temps moyen de séjour dans chaque état.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 5-8 4 5"/><path d="M3 21h18"/></svg></span>
+          <h4>Évaluation</h4>
+          <p class="teaser">Performance de détection par condition d'éclairage et de port de lunettes, et évaluation de l'anticipation : à quelle avance la dégradation devient-elle détectable avant le micro-sommeil ?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2>Périmètre</h2>
+      <div class="note note--quiet">
+        <span class="eyebrow">Limite posée d'emblée</span>
+        <p>Les données proviennent de séquences en simulateur : la validité écologique en conduite réelle n'est pas établie par ce travail. L'étude porte sur la mesure et sa dynamique, pas sur la conception d'un dispositif embarqué certifiable.</p>
+      </div>
+    </div>
+
+
+    <div class="case-section">
+      <h2>Résultats</h2>
+      <div class="note note--quiet">
+        <span class="eyebrow">Section en cours de rédaction</span>
+        <p>Les résultats seront publiés ici une fois le traitement terminé : indicateurs de performance, figures et interprétation, accompagnés des limites de la mesure.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2>Recommandations</h2>
+      <div class="note note--quiet">
+        <span class="eyebrow">Section en cours de rédaction</span>
+        <p>Les recommandations découleront des résultats mesurés et seront priorisées selon la même grille que l'étude 01 : réduction du risque estimée d'un côté, effort d'implémentation de l'autre.</p>
+      </div>
+    </div>
+
+    <div class="callout"><strong>Valeur visée :</strong> passer d'une détection instantanée à un modèle de transition d'état, seul capable de fonder une alerte anticipée.</div>
+
+    <p class="center" style="margin-top:2.4rem;">
+      <a href="projet-2-classification-physio.html" class="btn btn-ghost">← Projet précédent</a>
+      <a href="projet-4-mesure-publicitaire.html" class="btn btn-dark">Projet suivant →</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <div class="foot-brand">Esteffe Violet</div>
+      <div class="foot-role">Consultant Facteurs Humains — Ergonomie, Data &amp; UX</div>
+    </div>
+    <div class="foot-links">
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../a-propos.html">À propos</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../mentions-legales.html">Mentions légales</a>
+      <a href="https://www.linkedin.com/in/esteffe" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="copyright">© 2026 Esteffe Violet.</div>
+  </div>
+</footer>
+
+<script src="../assets/script.js"></script>
+</body>
+</html>

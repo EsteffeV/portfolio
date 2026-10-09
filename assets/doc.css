@@ -1,0 +1,141 @@
+/* ==========================================================================
+   doc.css — composants document (HTML → PDF, rendu Chromium)
+   Mêmes tokens que le site : un document et une page du site partagent
+   exactement les mêmes couleurs, la même typographie et la même échelle.
+
+   Usage dans un document :
+     <link rel="stylesheet" href="assets/doc.css">
+   puis rendu via :
+     chromium --headless --print-to-pdf=sortie.pdf --no-pdf-header-footer doc.html
+   Les polices étant auto-hébergées en woff2, le rendu est identique sur
+   n'importe quelle machine — ce qui n'était pas le cas du rapport PIC iX,
+   tombé sur des polices de repli.
+   ========================================================================== */
+
+@import url('fonts.css');
+@import url('tokens.css');
+
+@page {
+  size: A4;
+  margin: 20mm 18mm 18mm;
+}
+
+/* Première page : couverture pleine, sans marge */
+@page :first { margin: 0; }
+
+html { font-size: 11pt; }
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  color: var(--text);
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ---------- Couverture ---------- */
+
+.doc-cover {
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+  padding: 38mm 22mm 24mm;
+  height: 297mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  break-after: page;
+}
+.doc-cover .kicker {
+  font-family: var(--font-mono); font-size: 8pt; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent-inverse);
+  position: absolute; top: 28mm; left: 22mm;
+}
+.doc-cover h1 { font-size: 34pt; font-weight: 800; letter-spacing: -0.03em; line-height: 1.08; color: var(--text-inverse); max-width: 16ch; }
+.doc-cover .sub { font-size: 13pt; color: var(--text-inverse-muted); margin-top: 6mm; max-width: 42ch; line-height: 1.4; }
+.doc-cover .rule { width: 46mm; height: 1.4mm; background: var(--accent-inverse); margin: 8mm 0; }
+.doc-cover .meta { font-size: 9pt; color: var(--text-inverse-muted); margin-top: 10mm; line-height: 1.6; }
+.doc-cover .author { border-top: 1px solid var(--border-inverse); padding-top: 5mm; margin-top: 10mm; font-size: 9pt; color: var(--text-inverse); }
+
+/* ---------- Ouverture de partie ---------- */
+
+.doc-part {
+  background: var(--accent-solid); color: #fff;
+  padding: 24mm 22mm; height: 297mm;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  break-before: page; break-after: page;
+}
+.doc-part .kicker { font-family: var(--font-mono); font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; }
+.doc-part h1 { font-size: 28pt; color: #fff; margin-top: 4mm; }
+.doc-part p { font-size: 11pt; opacity: 0.9; margin-top: 4mm; max-width: 46ch; }
+
+/* ---------- Corps ---------- */
+
+.doc-section { break-before: page; }
+.doc-section > .kicker {
+  font-family: var(--font-mono); font-size: 8pt; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text);
+  display: block; margin-bottom: 2mm;
+}
+h1, h2, h3, h4 { break-after: avoid; letter-spacing: -0.02em; line-height: 1.18; }
+h2 { font-size: 19pt; font-weight: 800; margin-bottom: 4mm; }
+h3 { font-size: 12pt; font-weight: 700; margin: 6mm 0 2mm; }
+p { margin-bottom: 3mm; orphans: 3; widows: 3; }
+.chapeau { font-size: 12pt; color: var(--accent-text); line-height: 1.45; margin-bottom: 5mm; max-width: 54ch; }
+
+/* ---------- Encadrés ---------- */
+
+.doc-note {
+  border-left: 1mm solid var(--accent-solid); background: var(--accent-bg);
+  padding: 4mm 5mm; margin: 5mm 0; break-inside: avoid;
+}
+.doc-note .kicker {
+  font-family: var(--font-mono); font-size: 7.5pt; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text);
+  display: block; margin-bottom: 1.5mm;
+}
+.doc-note p { font-size: 10pt; color: var(--text-muted); margin-bottom: 2mm; }
+.doc-note--quiet { border-left-color: var(--border-strong); background: var(--bg-subtle); }
+.doc-note--quiet .kicker { color: var(--text-muted); }
+
+/* ---------- Tableaux ---------- */
+
+table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 4mm 0; break-inside: avoid; }
+th, td { text-align: left; padding: 2.4mm 3mm 2.4mm 0; border-bottom: 0.3pt solid var(--border); vertical-align: top; }
+thead th {
+  font-family: var(--font-mono); font-size: 7.5pt; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+  border-bottom: 0.6pt solid var(--border-strong);
+}
+td { color: var(--text-muted); }
+td:first-child, th:first-child { color: var(--text); font-weight: 600; }
+.num { font-family: var(--font-mono); color: var(--text); }
+caption, .table-note { caption-side: bottom; text-align: left; font-size: 8.5pt; color: var(--text-muted); padding-top: 2mm; line-height: 1.45; }
+
+/* ---------- Figures ---------- */
+
+figure { margin: 5mm 0; break-inside: avoid; }
+figure img { width: 100%; border: 0.3pt solid var(--border); }
+figcaption { font-size: 8.5pt; color: var(--text-muted); line-height: 1.45; margin-top: 2mm; }
+figcaption b {
+  font-family: var(--font-mono); font-size: 7.5pt; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--accent-text); font-weight: 500;
+}
+
+/* ---------- Sommaire ---------- */
+
+.toc { list-style: none; margin-top: 6mm; }
+.toc li { display: grid; grid-template-columns: 14mm 1fr auto; gap: 3mm; padding: 1.6mm 0; align-items: baseline; }
+.toc .idx { font-family: var(--font-mono); font-size: 8pt; color: var(--accent-text); letter-spacing: 0.06em; }
+.toc .ttl { font-size: 10.5pt; color: var(--text); }
+.toc .pg { font-family: var(--font-mono); font-size: 8.5pt; color: var(--text-muted); }
+.toc .lvl-1 .ttl { font-weight: 700; font-size: 12pt; }
+.toc .lvl-1 .pg { font-size: 11pt; color: var(--text); }
+
+/* ---------- Titre courant et pagination ---------- */
+
+.running-head {
+  position: running(head);
+  font-family: var(--font-mono); font-size: 7.5pt; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-muted);
+}
